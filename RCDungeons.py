@@ -16,11 +16,11 @@ __Updated__ = 'August 09, 2011'
 ### Class definitions ###
 class RCDungeons(PythonPlugin):
         def onEnable(self):
-                plugin = self.getServer().getPluginManager()
+                pm = self.getServer().getPluginManager()
                 respawn = RespawnListener()
                 self.perms = PermissionsHandler(plugin)
                 self.help = HelpMenu(self.perms)
-                plugin.registerEvent(Type.PLAYER_RESPAWN, respawn, Priority.Normal, self)
+                pm.registerEvent(Type.PLAYER_RESPAWN, respawn, Priority.Normal, self)
                 print "RCDungeons version " + __Version__ + " is now loaded. :)"
 
         def onDisable(self):
